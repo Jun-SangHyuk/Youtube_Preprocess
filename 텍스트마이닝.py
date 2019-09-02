@@ -6,8 +6,8 @@ import re
 import numpy as np
 from collections import Counter
 
-game = pd.read_csv('먹방(전처리).csv', encoding='utf-8')
-a = game['title']
+muk = pd.read_csv('먹방(전처리).csv', encoding='utf-8')
+a = muk['title']
 
 emoji_pattern = re.compile("["
         u"\U0001F600-\U0001F64F"  # emoticons
@@ -20,8 +20,8 @@ emoji_pattern = re.compile("["
 han = re.compile(r'[ㄱ-ㅎㅏ-ㅣ!?~,".\n\r#\ufeff\u200d]')
 
 comment_list = []
-for i in range(len(game)):
-    comment_list.append(game['title'].iloc[i])
+for i in range(len(muk)):
+    comment_list.append(muk['title'].iloc[i])
 
 comment_result = []
 
